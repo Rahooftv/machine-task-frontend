@@ -27,7 +27,7 @@ const Login: React.FC = () => {
       const res = await api.post("/auth/login", data);
       login(res.data.user);
       alert("Login successful");
-      navigate("/task");
+      navigate("/tasks");
     } catch (error: any) {
       alert(error.response?.data?.message || "Login failed");
     } finally {

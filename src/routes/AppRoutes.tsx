@@ -16,17 +16,11 @@ const AppRoutes: React.FC = () => {
 
         <Route path="/tasks" element={
             <ProtectedRoute> 
-            <Tasks /> 
+           <Tasks/>
             </ProtectedRoute>
         }/>
  
-      <Route path="/tasks "  element={
-        <ProtectedRoute>
-            <Tasks />
-          </ProtectedRoute>
-        }
-      />
-
+    
     
     </Routes>
   )
