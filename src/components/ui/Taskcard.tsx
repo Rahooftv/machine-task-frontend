@@ -38,7 +38,7 @@ const TaskCard: React.FC<TaskCardProps> = ({
     `}
     >
       <div>
-        <h2 className="text-xl font-semibold mb-1">{title}</h2>
+        <h2 className="text-xl text-indigo-500 font-semibold mb-1">{title}</h2>
 
         <p
           className={`font-medium ${

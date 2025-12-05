@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg">
              
-              <span className="text-sm font-medium text-gray-700">{user.name || user.email}</span>
+              <span className="text-sm font-medium text-green-700">{user.name }</span>
             </div>
             
           <Button
