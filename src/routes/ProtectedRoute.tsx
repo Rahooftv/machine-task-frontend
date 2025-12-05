@@ -9,9 +9,19 @@ interface Props {
 const ProtectedRoute: React.FC<Props> = ({ children }) => {
   const { user } = useAuth();
 
-  if (!user) return <Navigate to="/login" replace />;
+  const savedUser = localStorage.getItem("user");
+
+
+  if (!user && savedUser) {
+    return <></>; 
+  }
+
+  if (!user && !savedUser) {
+    return <Navigate to="/login" replace />;
+  }
 
   return <>{children}</>;
 };
 
 export default ProtectedRoute;
+

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 interface TaskCardProps {
   _id: string;
@@ -21,7 +22,7 @@ const TaskCard: React.FC<TaskCardProps> = ({
   const navigate = useNavigate();
   const isOverdue = status === "overdue";
 
-  // Check if the attachment is an image
+
   const isImage =
     attachment &&
     (attachment.endsWith(".png") ||
@@ -51,7 +52,7 @@ const TaskCard: React.FC<TaskCardProps> = ({
           Due Date: {new Date(dueDate).toLocaleDateString()}
         </p>
 
-        {/* Attachment Preview */}
+     
         {attachment && (
           <div className="mt-3">
             {isImage ? (
@@ -73,21 +74,22 @@ const TaskCard: React.FC<TaskCardProps> = ({
         )}
       </div>
 
-      {/* Buttons */}
       <div className="flex justify-between mt-4">
-        <button
-          onClick={() => navigate(`/tasks/update/${_id}`)}
-          className="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
-        >
-          Edit
-        </button>
+       <Button
+        variant="secondary"
+        onClick={() => navigate(`/task/update/${_id}`)}
+        className="px-4 py-2"
+      >
+        Edit
+      </Button>
 
-        <button
-          onClick={() => onDelete?.(_id)}
-          className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
-        >
-          Delete
-        </button>
+      <Button
+        variant="danger"
+        onClick={() => onDelete?.(_id)}
+        className="px-4 py-2"
+      >
+        Delete
+      </Button>
       </div>
     </div>
   );

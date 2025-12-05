@@ -6,6 +6,10 @@ import Register from "../pages/Register";
 import Tasks from "../pages/Tasks";
 import ProtectedRoute from "./ProtectedRoute";
 
+
+import AddTask from "../pages/AddTask";
+import UpdateTask from "../pages/UpdateTask";
+
 const AppRoutes: React.FC = () => {
   return (
     <Routes>
@@ -19,9 +23,24 @@ const AppRoutes: React.FC = () => {
            <Tasks/>
             </ProtectedRoute>
         }/>
- 
-    
-    
+
+        
+        <Route path="/task/add"
+          element={
+            <ProtectedRoute>
+              <AddTask/>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route path="/task/update/:id" element={
+            <ProtectedRoute> 
+            <UpdateTask/>
+            </ProtectedRoute>
+        }/>
+
+
+
     </Routes>
   )
 }
